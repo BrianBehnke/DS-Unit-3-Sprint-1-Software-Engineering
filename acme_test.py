@@ -12,7 +12,7 @@ class AcmeProductTests(unittest.TestCase):
         prod = Product('Test Product')
         self.assertEqual(prod.price, 10)
 
-    def test_default_product_weight(self):
+    def test_new_product_weight(self):
         """Test new product weight being 15."""
         prod = Product('Test Product')
         self.assertEqual(prod.weight, 15)
@@ -24,12 +24,12 @@ class AcmeProductTests(unittest.TestCase):
 
     def test_product_stealability(self):
         """Test product stealability"""
-        prod = Product('Test Product', weight=20, price=5)
-        self.assertEqual(prod.stealability(), "Kinda Stealable.")
+        prod = Product('Test Product', price=8, weight=20)
+        self.assertEqual(prod.stealability(), "Not so stealable...")
 
     def test_product_explode(self):
         """Test product explodity"""
-        prod = Product('Test Product', weight=100, flammability=100000)
+        prod = Product('Test Product', weight=100, flammability=800000)
         self.assertEqual(prod.explode(), "...BABOOM!!")
 
 

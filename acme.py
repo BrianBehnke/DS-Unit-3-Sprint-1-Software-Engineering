@@ -18,22 +18,22 @@ class Product:
         self.identifier = int(identifier)
 
     def stealability(self):
-        swipeable = self.price / self.weight
-        if swipeable < 0.5:
-            print("No so stealable...")
-        elif swipeable > 0.5 and swipeable <= 1.0:
-            print("Kinda Stealable.")
+        swipeable = (self.price / self.weight)
+        if swipeable >= 1:
+            return("Very stealable!")
+        elif swipeable >= 0.5:
+            return("Kinda Stealable.")
         else:
-            print("Very stealable!")
+            return("Not so stealable...")
 
     def explode(self):
         dynomite = self.flammability * self.weight
-        if dynomite < 10:
-            print("...fizzle.")
-        elif dynomite >= 10 and dynomite < 50:
-            print("...boom!")
+        if dynomite > 50:
+            return("...BABOOM!!")
+        elif dynomite >= 10:
+            return("...boom!")
         else:
-            print("...BABOOM!!")
+            return("...fizzle.")
 
 
 class BoxingGlove(Product):

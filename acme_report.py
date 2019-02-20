@@ -29,7 +29,7 @@ def inventory_report(n):
         list_of_weights.append(n[i].weight)
         list_of_flammability.append(n[i].flammability)
 
-    unique = set(list_of_names)
+    unique = len(set(list_of_names))
     average_price = sum(list_of_prices) / 30
     average_weight = sum(list_of_weights) / 30
     average_flammability = sum(list_of_flammability) / 30
